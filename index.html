@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D2W AI - Intelligence artificielle</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f7fd;color:#182b45}
+header{background:white;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #dce6f3}
+.logo{font-size:25px;font-weight:bold;color:#1674dc}
+.logo span{color:#182b45}
+main{max-width:850px;margin:55px auto;padding:20px}
+h1{text-align:center;font-size:34px;color:#176fd0}
+.sub{text-align:center;color:#64748b}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}
+.tool{background:white;border:1px solid #e1eaf5;border-radius:14px;padding:18px 8px;text-align:center;font-weight:bold;color:#2467ad}
+.tool span{display:block;font-size:25px;margin-bottom:8px}
+.chat{background:white;border-radius:18px;padding:18px;box-shadow:0 5px 25px #dce6f3}
+#messages{min-height:90px;max-height:300px;overflow:auto}
+.message{padding:12px;margin:8px 0;background:#edf5ff;border-radius:12px;white-space:pre-wrap}
+form{display:flex;gap:8px;margin-top:15px}
+input{flex:1;min-width:0;padding:15px;border:1px solid #cbd8e8;border-radius:12px;font-size:15px}
+button{border:0;background:#1875dc;color:white;border-radius:12px;padding:13px 19px;font-weight:bold}
+footer{text-align:center;color:#8796aa;padding:30px;font-size:13px}
+@media(max-width:500px){main{margin:25px auto}h1{font-size:27px}.tools{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">D2W <span>AI</span></div>
+ <div>🌍 Français</div>
+</header>
+<main>
+ <h1>Bienvenue sur D2W AI</h1>
+ <p class="sub">Votre intelligence artificielle au service de l'Afrique.</p>
+
+ <div class="tools">
+  <div class="tool"><span>💬</span>Assistant IA</div>
+  <div class="tool"><span>🎨</span>Images IA</div>
+  <div class="tool"><span>🎵</span>Musique IA</div>
+  <div class="tool"><span>🎬</span>Vidéos IA</div>
+  <div class="tool"><span>🎙️</span>Assistant vocal</div>
+  <div class="tool"><span>🌍</span>Traduction</div>
+ </div>
+
+ <section class="chat">
+  <h3>💙 Discutez avec D2W AI</h3>
+  <div id="messages">
+   <div class="message">Bonjour ! Je suis D2W AI. Comment puis-je vous aider ?</div>
+  </div>
+  <form id="chatForm">
+   <input id="question" placeholder="Écrivez votre message..." required>
+   <button type="submit">Envoyer</button>
+  </form>
+ </section>
+</main>
+<footer>© 2026 D2W AI — Tous droits réservés.</footer>
+<script>
+document.getElementById("chatForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const input=document.getElementById("question");
+ const messages=document.getElementById("messages");
+ const message=document.createElement("div");
+ message.className="message";
+ message.textContent="Vous : "+input.value;
+ messages.appendChild(message);
+ const reply=document.createElement("div");
+ reply.className="message";
+ reply.textContent="Merci pour votre message ! L'intelligence artificielle sera connectée lors de la prochaine étape.";
+ messages.appendChild(reply);
+ input.value="";
+ messages.scrollTop=messages.scrollHeight;
+});
+</script>
+</body>
+                                        </html>
+  
